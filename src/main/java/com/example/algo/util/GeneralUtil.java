@@ -1,5 +1,8 @@
 package com.example.algo.util;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.example.algo.state.Cell;
 import com.example.algo.state.GameState;
 import com.example.algo.state.Piece;
@@ -101,6 +104,20 @@ public class GeneralUtil {
 	public static boolean checkGameOver(GameState state) {
 		return state.pieces.isEmpty(); 
 	}
-	
+
+	public static void sendToReBirth(Piece piece, GameState state) {
+		Set<Integer> occupied = new HashSet<>();
+	    for (Piece p : state.pieces) {
+	        occupied.add(p.getPosition());
+	    }
+
+	    // 14 stands for the house of re-birth index
+	    for (int pos = 14; pos >= 0; pos--) {
+	        if (!occupied.contains(pos)) {
+	            piece.moveTo(pos);
+	            break;
+	        }
+	    }
+	}
 	
 }

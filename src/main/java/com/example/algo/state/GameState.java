@@ -9,11 +9,17 @@ public class GameState {
 	/*
 	 * Definitions
 	 */
-	public final Cell[] board = new Cell[30];
-	public final List<Piece> pieces = new ArrayList<>();
+	public  Cell[] board = new Cell[30];
+	public  List<Piece> pieces = new ArrayList<>();
 	private int currentPlayerIndex;
 	private int heuristec;
-
+	/*
+	 * Constructor
+	 */
+	public GameState(Cell[] board, List<Piece> pieces) {
+		this.board = board;
+		this.pieces = pieces; 
+	}
 	/*
 	 * public functions
 	 */
