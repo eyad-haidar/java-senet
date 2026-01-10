@@ -78,7 +78,8 @@ public class GameInitializer {
 				player2PieceIndex++;
 			}
 
-			pieceToPlace.moveTo(i);
+			// Move the piece to the right initial position
+			pieceToPlace.moveTo(cellNumber);
 		}
 	}
 }
